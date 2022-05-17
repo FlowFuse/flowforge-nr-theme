@@ -1,0 +1,53 @@
+{
+    "name": "@flowforge/flowforge-nr-theme",
+    "version": "0.0.1",
+    "description": "FlowForge themes for Node-RED",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/flowforge/flowforge-nr-theme.git"
+    },
+    "keywords": [
+        "node-red",
+        "flowforge",
+        "nodered",
+        "forge",
+        "theme",
+        "themes",
+        "plugin",
+        "plugins",
+        "light",
+        "dark",
+        "lowcode"
+    ],
+    "scripts": {
+        "build": "cross-env npm run build:light && npm run build:dark",
+        "build:light": "cross-env node build.js --in forge-light/forge-light-theme.scss --out forge-light/forge-light-theme.css ",
+        "build:dark": "cross-env node build.js  --in forge-dark/forge-dark-theme.scss --out forge-dark/forge-dark-theme.css "
+    },
+    "author": {
+        "name": "FlowFlow Inc."
+    },
+    "license": "SEE LICENSE IN ./LICENSE",
+    "bugs": {
+        "url": "https://github.com/flowforge/flowforge-nr-theme/issues"
+    },
+    "homepage": "https://github.com/flowforge/flowforge-nr-theme#readme",
+    "devDependencies": {
+        "cross-env": "^7.0.3",
+        "eslint": "^7.11.0",
+        "eslint-config-standard": "^16.0.1",
+        "fs-extra": "^10.1.0",
+        "nopt": "^5.0.0",
+        "sass": "1.51.0"
+    },
+    "node-red": {
+        "version": ">=2.2.0",
+        "plugins": {
+            "forge-light": "forge-light/forge-light.js",
+            "forge-dark": "forge-dark/forge-dark.js"
+        }
+    },
+    "engines": {
+        "node": ">=16.x"
+    }
+}

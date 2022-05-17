@@ -1,0 +1,54 @@
+/* Size up header to emulate FF */
+#red-ui-header {
+    height: 60px !important;
+    padding: 8px 0px 8px 16px;
+    border-bottom: 2px solid #D12B2B !important;
+}
+#red-ui-main-container {
+    top: 60px !important;
+}
+#red-ui-header span.red-ui-header-logo {
+    margin-top: 4px;
+}
+#red-ui-header .red-ui-header-toolbar {
+    padding: 0px 12px 0px 12px;
+}
+#red-ui-header span.red-ui-header-logo img {
+    height: 26px;
+}
+#red-ui-header span.red-ui-header-logo span:not(:first-child) {
+    margin-left: 14px;
+    font-size: 19px !important;
+    text-transform: uppercase;
+    top: 1px;
+    position: relative;
+    font-weight: 500;
+}
+#red-ui-header #red-ui-header-button-user .user-profile {
+    width: 26px;
+    height: 26px;
+}
+#red-ui-header span.button-group {
+    top: 2px;
+    position: relative;
+}
+#red-ui-header .button {
+    font-size: 26px;
+    padding: 1px 6px;
+}
+#red-ui-header-button-sidemenu > i {
+    position: relative;
+    top: 2px;
+}
+
+/** emulate FF menu separators */
+.red-ui-menu-dropdown .red-ui-menu-divider,
+#red-ui-header ul.red-ui-menu-dropdown li.red-ui-menu-divider {
+    /* background: unset; */
+    background-color: unset;
+    border-top: 2px solid #BC3838;
+}
+.red-ui-menu-dropdown .red-ui-menu-divider {
+    height: 0px;
+    margin: 4px 0px;
+}
