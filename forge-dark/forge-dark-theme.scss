@@ -18,37 +18,39 @@ $primary-font: 'Helvetica Neue', Arial, Helvetica, sans-serif;
 $primary-font-size: 14px;
 $monospace-font: Menlo, Consolas, 'DejaVu Sans Mono', Courier, monospace;
 
-$primary-background: #21222C; //#0ff;
+$primary-background: #1F2937; //#0ff;
 
-$secondary-background: #282A36; //#ff0;
-$secondary-background-selected: #44475A; //#e9e900;
-$secondary-background-inactive: #21222C; //#f0f000;
-$secondary-background-hover: #21222C; //#dd0;
-$secondary-background-disabled: #21222C; //#fafa0;
+$secondary-background: darken( $primary-background, 3);//#FAFBFF;//#fff;//#ff0; //<<
+$secondary-background-selected: lighten( $primary-background, 4);//#efeff4;//#e9e900;
+$secondary-background-inactive: lighten( $primary-background, 3);//#f0f1f9;//#f0f000;
+$secondary-background-hover: lighten( $primary-background, 2); // #F1F2FA; //#dd0; // <<
+$secondary-background-disabled: darken( $primary-background, 2); //#f5f6fd;//#fafa0; //<<
 
-$tertiary-background: #21222C; //#f0f;
+// $tertiary-background: #21222C; //#f0f;
+$tertiary-background:  darken( $primary-background, 3); //#f6f7fd;//#f0f; //<<
 
 $shadow: rgba(0, 0, 0, 0.2);
 
 // Main body text
-$primary-text-color: #F8F8F2; //#0f0;
+$primary-text-color: #F1F2F8; //#0f0;
 
 // UI control label text
-$secondary-text-color: #F8F8F2; //#00f;
-$secondary-text-color-focus: #F8F8F2; //#009;
-$secondary-text-color-hover: #F8F8F2; //#006;
-$secondary-text-color-active: #F8F8F2; //#006;
-$secondary-text-color-selected: #F8F8F2; //#00A;
-$secondary-text-color-inactive: #F8F8F2; //#006;
-$secondary-text-color-disabled: #44475A; //#00C;
-$secondary-text-color-disabled-active: #44475A; //#009;
-$secondary-text-color-disabled-inactive: #44475A; //#00A;
+$secondary-text-color: #F1F2F8; //#00f;
+$secondary-text-color-focus: #F1F2F8; //#009;
+$secondary-text-color-hover: #F1F2F8; //#006;
+$secondary-text-color-active: #F1F2F8; //#006;
+$secondary-text-color-selected: #F1F2F8; //#00A;
+$secondary-text-color-inactive: #F1F2F8; //#006;
+$secondary-text-color-disabled: #61626A; //#00C;
+$secondary-text-color-disabled-active: #68696F; //#009;
+$secondary-text-color-disabled-inactive: #606168; //#00A;
 
 // Sub label text
-$tertiary-text-color: #f0f1f67f; //#90f;
+$tertiary-text-color: #f0f1f6dd; //#90f;
 
 // Heading text
-$header-text-color: #F8F8F2; //#f00;
+$header-text-color: #F1F2F8; //#f00;
+
 
 $text-color-error: #DF2935;
 $text-color-warning: #F1FA8C;
@@ -78,7 +80,7 @@ $form-button-background: $secondary-background-selected;
 
 $form-tips-background: $primary-background;
 
-$text-editor-color: #f8f8f2; //#00f;
+$text-editor-color: #f1f2f8; //#00f;
 $text-editor-background: #282a36;
 $text-editor-color-disabled: $secondary-text-color-inactive;
 $text-editor-background-disabled: $secondary-background-disabled;
@@ -148,7 +150,7 @@ $diff-state-added: #50FA7B;
 $diff-state-deleted: #FF5555;
 $diff-state-changed: #FFB86C;
 $diff-state-changed-background: $secondary-background;
-$diff-state-unchanged: #f8f8f2;
+$diff-state-unchanged: #f1f2f8;
 $diff-state-unchanged-background: $secondary-background;
 
 $diff-state-conflicted: purple;
@@ -222,34 +224,34 @@ $node-status-colors: (red: #c00,
 $node-selected-color: #ff7f0e;
 $port-selected-color: #ff7f0e;
 
-$link-color: #999;
-$link-link-color: #aaa;
-$link-disabled-color: #ccc;
+$link-color: #919299;
+$link-link-color: #a5a6ac;
+$link-disabled-color: #c5c6cd;
 $link-link-active-color: #ff7f0e;
 $link-unknown-color: #f00;
 
 $clipboard-textarea-background: $primary-background;
 
-$deploy-button-color: #eee;
-$deploy-button-color-active: #ccc;
-$deploy-button-color-disabled: #999;
+$deploy-button-color: #c1c2cc;//#eee; //<<
+$deploy-button-color-active: #c1c2cc; // #ccc; //<<
+$deploy-button-color-disabled: #91929D; //#999; //<<
 $deploy-button-background: #8C101C;
 $deploy-button-background-hover: #6E0A1E;
 $deploy-button-background-active: #4C0A17;
-$deploy-button-background-disabled: #444;
-$deploy-button-background-disabled-hover: #555;
+$deploy-button-background-disabled: #3f4957;//<<
+$deploy-button-background-disabled-hover: #4f5967;//<<
 
-$header-background: #000;
-$header-button-background-active: #121212;
-$header-menu-color: #C7C7C7;
-$header-menu-color-disabled: #666;
-$header-menu-heading-color: #fff;
-$header-menu-sublabel-color: #aeaeae;
-$header-menu-background: #121212;
-$header-menu-item-hover: #323232;
-$header-menu-item-border-active: #777677;
-$headerMenuItemDivider: #464646;
-$headerMenuCaret: #C7C7C7;
+$header-background: #1F2937;
+$header-button-background-active: #1F2937;
+$header-menu-color: #e1e2e3;
+$header-menu-color-disabled: $secondary-text-color-disabled; //#666; //<
+$header-menu-heading-color: #f9fafb;
+$header-menu-sublabel-color: #8e9eae;
+$header-menu-background: #1F2937;
+$header-menu-item-hover: #2F3947;
+$header-menu-item-border-active: #5F6977;
+$headerMenuItemDivider: #4F5967;
+$headerMenuCaret: #a7b7C7;
 
 $vcCommitShaColor: #FFB86C;
 
@@ -264,7 +266,7 @@ $notification-border-error: $border-color-error;
 $debug-message-background: $secondary-background;
 $debug-message-background-hover: $secondary-background-selected;
 
-$debug-message-text-color: #F8F8F2;
+$debug-message-text-color: #F1F2F8;
 $debug-message-text-color-meta: #FFB86C;
 $debug-message-text-color-object-key: #BD93F9;
 $debug-message-text-color-msg-type-other: #8BE9FD;
@@ -284,8 +286,10 @@ $group-default-stroke: $primary-border-color;
 $group-default-stroke-opacity: 1;
 $group-default-label-color: $primary-text-color;
 
-$tourGuide-border: #c56c6c;
-$tourGuide-heading-color: #c56c6c;
+$tourGuide-border: #D12B2B; //#c56c6c; //<<
+$tourGuide-heading-color: #BC3838; //#c56c6c; //<<
+
+$tab-icon-color: lighten($secondary-background-selected, 10); //#d1d2d9; //#dedede; //<<
 
 // Deprecated
 $text-color-green: $text-color-success;

@@ -14,6 +14,7 @@ const nopt = require('nopt')
 const path = require('path')
 const fs = require('fs-extra')
 const sass = require('sass')
+const sassDir = '/packages/node_modules/@node-red/editor-client/src/sass/'
 
 const knownOpts = {
     help: Boolean,
@@ -26,31 +27,42 @@ const shortHands = {
     '?': ['--help']
 }
 nopt.invalidHandler = function (k, v, t) {}
-
 const parsedArgs = nopt(knownOpts, shortHands, process.argv, 2)
-const src = process.env.npm_config_src || parsedArgs.src
+const argSrc = process.env.npm_config_src || parsedArgs.src
 const argIn = process.env.npm_config_in || parsedArgs.in
 const argOut = process.env.npm_config_out || parsedArgs.out
-const long = !!(process.env.npm_config_long || parsedArgs.long)
-
-if (!src || !argIn || !argOut || parsedArgs.help) {
-    console.log('Usage: build [-?] [--in=FILE] [--out=FILE] [--src=PATH]')
-    console.log('')
-    console.log('Options:')
-    console.log('  --in         FILE  Custom colors sass file')
-    console.log('  --out        FILE  Where you write the result')
-    console.log('  --src        PATH  Path to src of node-red')
-    console.log('  --long       Do not compress the colors.scss file')
-    console.log('  -?, --help   Show this help')
-    console.log('')
-    process.exit(parsedArgs.help ? 0 : 1)
-}
-
+const argLong = !!(process.env.npm_config_long || parsedArgs.long)
 const ruleRegex = /(\$.*?) *: *(\S[\S\s]*?);/g
+const customColors = {}
 let match
 
-const customColors = {}
+console.log('')
 
+if (parsedArgs.help) {
+    showUsageAndExit(0)
+}
+if (!argOut) {
+    console.warn('Missing variable: out')
+    showUsageAndExit(1)
+}
+if (!argSrc) {
+    console.warn('Missing variable: src')
+    showUsageAndExit(1)
+}
+if (!fs.existsSync(argSrc)) {
+    console.warn(`Node-RED directory '${argSrc}' not found`)
+    showUsageAndExit(1)
+}
+if (!fs.existsSync(path.join(argSrc, '/package.json'))) {
+    console.warn(`Node-RED path is not valid. Could not find '${path.join(argSrc, '/package.json')}'`)
+    showUsageAndExit(2)
+}
+if (!fs.existsSync(path.join(argSrc, sassDir))) {
+    console.warn(`Node-RED path is not valid. Could not find '${path.join(argSrc, sassDir)}'`)
+    showUsageAndExit(3)
+}
+
+// load custom colours
 if (argIn && fs.existsSync(argIn)) {
     const customColorsFile = fs.readFileSync(argIn, 'utf-8')
     while ((match = ruleRegex.exec(customColorsFile)) !== null) {
@@ -58,17 +70,8 @@ if (argIn && fs.existsSync(argIn)) {
     }
 }
 
-if (!fs.existsSync(src)) {
-    throw new Error(`Node-RED directory '${src}' not found`)
-}
-if (!fs.existsSync(path.join(src, '/package.json'))) {
-    throw new Error(`Node-RED path is not valid. Could not find '${path.join(src, '/package.json')}'`)
-}
-if (!fs.existsSync(path.join(src, '/packages/node_modules/@node-red/editor-client/src/sass'))) {
-    throw new Error(`Node-RED path is not valid. Could not find '${path.join(src, '/packages/node_modules/@node-red/editor-client/src/sass')}'`)
-}
 // Load base colours
-const colorsFile = fs.readFileSync(path.join(src, '/packages/node_modules/@node-red/editor-client/src/sass/colors.scss'), 'utf-8')
+const colorsFile = fs.readFileSync(path.join(argSrc, sassDir, 'colors.scss'), 'utf-8')
 const updatedColors = []
 
 while ((match = ruleRegex.exec(colorsFile)) !== null) {
@@ -78,7 +81,7 @@ while ((match = ruleRegex.exec(colorsFile)) !== null) {
 (async function () {
     const tmpDir = os.tmpdir()
     const workingDir = await fs.mkdtemp(`${tmpDir}${path.sep}`)
-    await fs.copy(path.join(src, '/packages/node_modules/@node-red/editor-client/src/sass/'), workingDir)
+    await fs.copy(path.join(argSrc, sassDir), workingDir)
     await fs.writeFile(path.join(workingDir, 'colors.scss'), updatedColors.join('\n'))
     const result = sass.compile(path.join(workingDir, 'style.scss'), { outputStyle: 'expanded' })
     const css = result.css.toString()
@@ -107,14 +110,14 @@ while ((match = ruleRegex.exec(colorsFile)) !== null) {
         }
     })
 
-    const nrPkg = require(path.join(src, 'package.json'))
+    const nrPkg = require(path.join(argSrc, 'package.json'))
     const now = new Date().toISOString()
 
     const header = `/*
 * Theme generated with Node-RED ${nrPkg.version} on ${now}
 */`
 
-    const output = sass.compileString(colorCSS.join('\n'), { style: long ? 'expanded' : 'compressed' })
+    const output = sass.compileString(colorCSS.join('\n'), { style: argLong ? 'expanded' : 'compressed' })
     if (argOut) {
         await fs.writeFile(argOut, header + '\n' + output.css)
     } else {
@@ -123,3 +126,19 @@ while ((match = ruleRegex.exec(colorsFile)) !== null) {
     }
     await fs.remove(workingDir)
 })()
+
+function showUsageAndExit (exitCode) {
+    console.log('')
+    console.log('Usage:   build [-?] [--in=FILE] [--out=FILE] [--src=PATH]')
+    console.log('Example: npm run build --src=../src/node-red')
+    console.log('Example: node build.js --in=colors.scss --out=compiled.css --src=../src/node-red')
+    console.log('')
+    console.log('Options:')
+    console.log('  --in         FILE  Custom colors sass file')
+    console.log('  --out        FILE  Where you write the result')
+    console.log('  --src        PATH  Path to src of node-red')
+    console.log('  --long       Do not compress the colors.scss file')
+    console.log('  -?, --help   Show this help')
+    console.log('')
+    process.exit(exitCode == null ? (parsedArgs.help ? 0 : 1) : exitCode)
+}

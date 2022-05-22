@@ -1,14 +1,12 @@
 module.exports = function (RED) {
     RED.plugins.registerPlugin('forge-dark', {
         type: 'node-red-theme',
+        scripts: [
+            'forge-dark/forge-dark-customisations.js'
+        ],
         css: [
             'forge-dark/forge-dark-theme.css',
-            'common/forge-common.css',
-            'common/scrollbars.min.css',
-            'common/ff-nr.png',
-            'common/favicon-16x16.png',
-            'common/favicon-32x32.png',
-            'common/favicon.ico'
+            'common/forge-common.css'
         ],
         monacoOptions: {
             theme: require('./forge-dark-monaco.json'),
@@ -21,7 +19,6 @@ module.exports = function (RED) {
             linkedEditing: true,
             showFoldingControls: 'always',
             'bracketPairColorization.enabled': true
-        },
-        scripts: ['forge-dark/forge-dark-customisations.js']
+        }
     })
 }
