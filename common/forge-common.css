@@ -91,7 +91,33 @@ ul.red-ui-menu > li:NOT(.disabled) > a:hover {
     background-color: var(--red-ui-primary-background);
 }
 
+/* hide debug scrollbar until required */
 .red-ui-debug-content {
     overflow:auto;
 }
 
+/* Increase size of quick add pop up to show more "recently used" */
+.red-ui-type-search .red-ui-search-results-container {
+    height: 195px;
+}
+
+/* config nodes in sidebar - solid to cover text overflow */
+.red-ui-palette-node-config.red-ui-palette-node  {
+    background-color: #e7e8ef;
+    cursor: default !important;
+}
+
+.red-ui-palette-node-config.red-ui-palette-node:not(.red-ui-palette-node-config-unused) .red-ui-palette-icon-container-right    {
+    background-color: #d1d2da !important;
+    cursor: pointer !important;
+}
+
+.red-ui-palette-node-config.red-ui-palette-node:not(.red-ui-palette-node-config-unused)  .red-ui-palette-icon-container-right  :hover {
+    background-color: #c7c8cf !important;
+    cursor: pointer !important;
+}
+
+.red-ui-palette-node-config.red-ui-palette-node.red-ui-palette-node-config-unused {
+    background-color: #77787f !important;
+    cursor: default !important;
+}

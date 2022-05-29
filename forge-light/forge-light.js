@@ -2,13 +2,14 @@ module.exports = function (RED) {
     RED.plugins.registerPlugin('forge-light', {
         type: 'node-red-theme',
         scripts: [
-            'forge-light/forge-light-customisations.js'
+            // /* optional */ 'common/forge-common.js'
+            'forge-light/forge-light-custom.js'
         ],
         css: [
-            'forge-light/forge-light-theme.css',
-            'common/forge-common.css'
+            'common/forge-common.css',
+            'forge-light/forge-light-theme.css'
+            // /* optional */ 'forge-light/forge-light-custom.css'
         ],
-        lib: 'monaco',
         monacoOptions: {
             theme: require('./forge-light-monaco.json'),
             fontSize: 14,

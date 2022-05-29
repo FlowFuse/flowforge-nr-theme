@@ -3,7 +3,7 @@
     "inherit": true,
     "rules": [
         {
-            "background": "282a36",
+            "background": "1f2937",
             "token": ""
         },
         {
@@ -198,11 +198,16 @@
     "colors": {
         "editor.foreground": "#f8f8f2",
         "editor.background": "#1f2937",
-        "editor.selectionBackground": "#44475a",
-        "editor.lineHighlightBackground": "#44475a",
         "editorCursor.foreground": "#f8f8f0",
-        "editorWhitespace.foreground": "#3B3A32",
-        "editorIndentGuide.activeBackground": "#9D550FB0",
-        "editor.selectionHighlightBorder": "#222218"
+        "dropdown.background": "#44475a",
+        "editor.selectionBackground": "#44475a70",
+        "editor.inactiveSelectionBackground": "#44475a30",
+        "editorWidget.background": "#44475a",
+        "list.hoverForeground": "#44475a",
+        "list.hoverBackground": "#F7F8FC",
+        "list.focusForeground": "#44475a", 
+        "list.focusBackground": "#F7F8FC", 
+        "list.activeSelectionForeground": "#44475a",
+        "list.activeSelectionBackground": "#F7F8FC"
     }
 }

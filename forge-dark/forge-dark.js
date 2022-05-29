@@ -2,11 +2,13 @@ module.exports = function (RED) {
     RED.plugins.registerPlugin('forge-dark', {
         type: 'node-red-theme',
         scripts: [
-            'forge-dark/forge-dark-customisations.js'
+            // /* optional */ 'common/forge-common.js'
+            'forge-dark/forge-dark-custom.js'
         ],
         css: [
-            'forge-dark/forge-dark-theme.css',
-            'common/forge-common.css'
+            'common/forge-common.css',
+            'forge-dark/forge-dark-theme.css'
+            // /* optional */ 'forge-light/forge-light-custom.css'
         ],
         monacoOptions: {
             theme: require('./forge-dark-monaco.json'),
