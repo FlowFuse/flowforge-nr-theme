@@ -214,6 +214,8 @@ $node-icon-border-color: #000;
 $node-icon-border-color-opacity: 0.1;
 $node-config-background: darken(#F1F2F8, 2);
 
+$node-config-background: #f1f2f9;
+
 $node-link-port-background: #eee;
 
 $node-status-error-border: rgb(145, 16, 2);
@@ -228,6 +230,7 @@ $node-status-colors: (
     blue: #53A3F3,
     grey: #d3d3d3
 );
+
 
 $node-selected-color: #ff7f0e;
 $port-selected-color: #ff7f0e;
