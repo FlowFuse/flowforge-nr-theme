@@ -54,9 +54,7 @@
 
 /** emulate FF menu labels */
 #red-ui-header > ul > li:NOT(.disabled) > ul > li:NOT(.disabled) > ul > li:NOT(.disabled) > a:hover,
-#red-ui-header > ul > li:NOT(.disabled) > ul > li:NOT(.disabled) > a:hover,
-ul.red-ui-menu-dropdown > li:NOT(.disabled) > a:hover,
-ul.red-ui-menu > li:NOT(.disabled) > a:hover {
+#red-ui-header > ul > li:NOT(.disabled) > ul > li:NOT(.disabled) > a:hover {
     color: #8CE2E7 !important;
     transition: 0.3s background-color, 0.3s color !important;
     -webkit-transition: 0.3s background-color, 0.3s color !important;
@@ -67,28 +65,23 @@ ul.red-ui-menu > li:NOT(.disabled) > a:hover {
     scrollbar-color: var(--red-ui-secondary-text-color) var(--red-ui-tertiary-background);
     scrollbar-width: auto;
 }
-
 ::-webkit-scrollbar {
-    width: auto;
-    height: auto;
+    width: 12px;
+    height: 12px;
 }
-
 ::-webkit-scrollbar-corner {
     background-color: var(--red-ui-primary-background);
 }
-
 ::-webkit-scrollbar-thumb {
     background-color: var(--red-ui-secondary-text-color);
-    border-radius: 8px;
-    border: 5px solid var(--red-ui-primary-background);
+    border-radius: 6px;
+    border: 3px solid var(--red-ui-primary-background);
 }
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: var(--red-ui-secondary-text-color-hover);
-}
-
 ::-webkit-scrollbar-track {
     background-color: var(--red-ui-primary-background);
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--red-ui-secondary-text-color-hover);
 }
 
 /* hide debug scrollbar until required */
@@ -106,17 +99,14 @@ ul.red-ui-menu > li:NOT(.disabled) > a:hover {
     background-color: #e7e8ef;
     cursor: default !important;
 }
-
 .red-ui-palette-node-config.red-ui-palette-node:not(.red-ui-palette-node-config-unused) .red-ui-palette-icon-container-right    {
     background-color: #d1d2da !important;
     cursor: pointer !important;
 }
-
 .red-ui-palette-node-config.red-ui-palette-node:not(.red-ui-palette-node-config-unused)  .red-ui-palette-icon-container-right  :hover {
     background-color: #c7c8cf !important;
     cursor: pointer !important;
 }
-
 .red-ui-palette-node-config.red-ui-palette-node.red-ui-palette-node-config-unused {
     background-color: #77787f !important;
     cursor: default !important;

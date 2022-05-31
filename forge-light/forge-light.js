@@ -2,8 +2,8 @@ module.exports = function (RED) {
     RED.plugins.registerPlugin('forge-light', {
         type: 'node-red-theme',
         scripts: [
-            // /* optional */ 'common/forge-common.js'
-            'forge-light/forge-light-custom.js'
+            'common/forge-common.js'
+            // /* optional */ 'forge-light/forge-light-custom.js'
         ],
         css: [
             'common/forge-common.css',

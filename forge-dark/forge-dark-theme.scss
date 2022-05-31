@@ -32,22 +32,22 @@ $tertiary-background:  darken( $primary-background, 3); //#f6f7fd;//#f0f; //<<
 $shadow: rgba(0, 0, 0, 0.2);
 
 // Main body text
-$primary-text-color: #F1F2F8; //#0f0;
+$primary-text-color: #a1a2a8; //#0f0;
 // UI control label text
-$secondary-text-color: #F1F2F8; //#00f;
-$secondary-text-color-focus: #F1F2F8; //#009;
-$secondary-text-color-hover: #F1F2F8; //#006;
-$secondary-text-color-active: #F1F2F8; //#006;
-$secondary-text-color-selected: #F1F2F8; //#00A;
-$secondary-text-color-inactive: #F1F2F8; //#006;
+$secondary-text-color: #a1a2a8; //#00f;
+$secondary-text-color-focus: #a1a2a8; //#009;
+$secondary-text-color-hover: #a1a2a8; //#006;
+$secondary-text-color-active: #a1a2a8; //#006;
+$secondary-text-color-selected: #a1a2a8; //#00A;
+$secondary-text-color-inactive: #a1a2a8; //#006;
 $secondary-text-color-disabled: #61626A; //#00C;
 $secondary-text-color-disabled-active: #68696F; //#009;
 $secondary-text-color-disabled-inactive: #606168; //#00A;
 
 // Sub label text
-$tertiary-text-color: #f0f1f6dd; //#90f;
+$tertiary-text-color: #707176ee; //#90f;
 // Heading text
-$header-text-color: #F1F2F8; //#f00;
+$header-text-color: #d1d2d8; //#f00;
 
 $text-color-error: #DF2935;
 $text-color-warning: #F1FA8C;
@@ -79,7 +79,7 @@ $form-button-background: $secondary-background-selected;
 $form-tips-background: $primary-background;
 
 
-$text-editor-color: #f1f2f8; //#00f;
+$text-editor-color: #a1a2a8; //#00f;
 $text-editor-background: #282a36;
 $text-editor-color-disabled: $secondary-text-color-inactive;
 $text-editor-background-disabled: $secondary-background-disabled;
