@@ -19,7 +19,7 @@
 #red-ui-header span.red-ui-header-logo span:not(:first-child) {
     margin-left: 14px;
     font-size: 19px !important;
-    text-transform: uppercase;
+    text-transform: capitalize;
     top: 1px;
     position: relative;
     font-weight: 500;
