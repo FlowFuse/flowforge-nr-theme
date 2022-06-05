@@ -52,6 +52,11 @@
     margin: 4px 0px;
 }
 
+/* spinner text color fix */
+.ui-widget-content {
+    color: var(--red-ui-secondary-text-color)
+}
+
 /** emulate FF menu labels */
 #red-ui-header > ul > li:NOT(.disabled) > ul > li:NOT(.disabled) > ul > li:NOT(.disabled) > a:hover,
 #red-ui-header > ul > li:NOT(.disabled) > ul > li:NOT(.disabled) > a:hover {
