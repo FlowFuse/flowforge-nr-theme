@@ -52,9 +52,12 @@
     margin: 4px 0px;
 }
 
-/* spinner text color fix */
-.ui-widget-content {
-    color: var(--red-ui-secondary-text-color)
+/* jquery ui elements color fix */
+.ui-widget-content,
+.ui-state-default a, .ui-state-default a:link,
+.ui-state-default a:visited, a.ui-button, a:link.ui-button,
+a:visited.ui-button, .ui-button {
+    color: var(--red-ui-primary-text-color);
 }
 
 /** emulate FF menu labels */

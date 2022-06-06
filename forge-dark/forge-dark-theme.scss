@@ -32,17 +32,17 @@ $tertiary-background:  darken( $primary-background, 3); //#f6f7fd;//#f0f; //<<
 $shadow: rgba(0, 0, 0, 0.2);
 
 // Main body text
-$primary-text-color: #a1a2a8; //#0f0;
+$primary-text-color: #d1d2d9; //#0f0;
 // UI control label text
-$secondary-text-color: #a1a2a8; //#00f;
-$secondary-text-color-focus: #a1a2a8; //#009;
-$secondary-text-color-hover: #a1a2a8; //#006;
-$secondary-text-color-active: #a1a2a8; //#006;
-$secondary-text-color-selected: #a1a2a8; //#00A;
+$secondary-text-color: #b1b2b9; //#00f;
+$secondary-text-color-focus: #dedfe8; //#009;
+$secondary-text-color-hover: #dedfe8; //#006;
+$secondary-text-color-active: #d7d8df; //#006;
+$secondary-text-color-selected: #dedfe8; //#00A;
 $secondary-text-color-inactive: #a1a2a8; //#006;
-$secondary-text-color-disabled: #61626A; //#00C;
-$secondary-text-color-disabled-active: #68696F; //#009;
-$secondary-text-color-disabled-inactive: #606168; //#00A;
+$secondary-text-color-disabled: #81828A; //#00C;
+$secondary-text-color-disabled-active: #88898F; //#009;
+$secondary-text-color-disabled-inactive: #808188; //#00A;
 
 // Sub label text
 $tertiary-text-color: #707176ee; //#90f;
@@ -76,7 +76,7 @@ $form-input-background: $secondary-background;
 $form-input-background-disabled: $secondary-background-disabled;
 $form-button-background: $secondary-background-selected;
 
-$form-tips-background: $primary-background;
+$form-tips-background: #3f3f30; //$primary-background;
 
 
 $text-editor-color: #a1a2a8; //#00f;
