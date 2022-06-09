@@ -85,6 +85,9 @@
     height: 0px;
     margin: 4px 0px;
 }
+#red-ui-header ul.red-ui-menu-dropdown li a span.red-ui-menu-sublabel {
+    display: block;
+}
 
 /* jquery ui elements color fix */
 .ui-widget-content,

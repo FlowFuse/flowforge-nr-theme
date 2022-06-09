@@ -195,7 +195,7 @@ $view-lasso-stroke: #ff7f0e;
 $view-lasso-fill: rgba(20, 125, 255, 0.1);
 
 $view-background: $secondary-background;
-$view-grid-color: $primary-background;
+$view-grid-color: lighten( $primary-background, 4);//$primary-background;
 
 $node-label-color: #333;
 $node-port-label-color: #888;
