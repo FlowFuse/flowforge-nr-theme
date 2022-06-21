@@ -66,7 +66,7 @@ To modify colors..
   * Save it somewhere in this project
 * Update the colors as required & save
 * build the css using the `build.js` script e.g...
-  * `node build.js --in=colors.scss --out=compiled.scss --src=/src/node-red`
+  * `node build.js --in=colors.scss --out=compiled.css --src=/src/node-red`
 
 ### Build
 
