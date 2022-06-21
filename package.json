@@ -1,5 +1,5 @@
 {
-    "name": "@flowforge/flowforge-nr-theme",
+    "name": "@flowforge/nr-theme",
     "version": "0.0.1",
     "description": "FlowForge themes for Node-RED",
     "repository": {
