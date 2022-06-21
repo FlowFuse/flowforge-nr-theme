@@ -29,25 +29,29 @@ When done, the project can be updated to V1.0.0 and released to NPM
 Run the following command from within the Node-RED user data directory (by default, `~/.node-red`).
 
 ```shell
-npm install @flowforge/flowforge-nr-theme
+npm install @flowforge/nr-theme
+```
+
+### Install from gitgub
+
+Run the following command from within the Node-RED user data directory (by default, `~/.node-red`).
+
+```shell
+npm install https://github.com/flowforge/flowforge-nr-theme
 ```
 
 ### Usage
 
+#### Nore-RED
 For a standard Node-RED installation 
 * Set `theme: "forge-light"` in the `editorTheme` object in your `settings.js` then restart Node-RED.
 OR
 * Set `theme: "forge-dark"`  in the `editorTheme` object in your `settings.js` then restart Node-RED.
 
-For FlowForge, select the theme in the project settings
+#### FlowForge
+For FlowForge, the theme will be installed by default in versions >= 0.7.0 and only works with NR stacks >= v3.0.0-beta.3
+NOTE: In the first release of theme support for FlowForge, there will be no means of selecting a theme (the forge-light theme will be set by default)
 
-Example...
-
-```js
-    editorTheme: {
-        theme: "forge-light",
-    },
-```
 
 ## License
 Apache License
