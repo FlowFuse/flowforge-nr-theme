@@ -25,7 +25,7 @@
         "build:dark": "cross-env node build.js  --in forge-dark/forge-dark-theme.scss --out forge-dark/forge-dark-theme.css "
     },
     "author": {
-        "name": "FlowFlow Inc."
+        "name": "FlowForge Inc."
     },
     "license": "SEE LICENSE IN ./LICENSE",
     "bugs": {
