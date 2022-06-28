@@ -1,26 +1,11 @@
-# flowforge-nr-theme
-A set of custom Node-RED themes used when running inside the FlowForge platform
+# FlowForge Node-RED Theme
 
-## IMPORTANT - pre-release
-
-This package is v0.0.1. It is a MVP with minimal styling to match the FlowForge header layout
-and a hand full of colors copied from the FlowForge project to give it a very basic FlowForge
-feel to see how it looks
-
-## TODO
-
-* Styling, colors, customisations, monaco theming, favicon and layout needs to be reviewed
-* Integration with Node-RED (e.g. setting title, and any other items - see figma)
-* FlowForge elements for selecting theme needs to be implemented with Node-RED (e.g.)
-
-When done, the project can be updated to V1.0.0 and released to NPM
-
+A set of custom Node-RED themes used when running inside the FlowForge platform.
 
 ## Themes included
 
 * forge-light
 * forge-dark
-
 
 ## Install
 
@@ -32,7 +17,7 @@ Run the following command from within the Node-RED user data directory (by defau
 npm install @flowforge/nr-theme
 ```
 
-### Install from gitgub
+### Install from GitHub
 
 Run the following command from within the Node-RED user data directory (by default, `~/.node-red`).
 
@@ -42,38 +27,33 @@ npm install https://github.com/flowforge/flowforge-nr-theme
 
 ### Usage
 
-#### Nore-RED
-For a standard Node-RED installation 
-* Set `theme: "forge-light"` in the `editorTheme` object in your `settings.js` then restart Node-RED.
-OR
-* Set `theme: "forge-dark"`  in the `editorTheme` object in your `settings.js` then restart Node-RED.
+#### Node-RED
 
-#### FlowForge
-For FlowForge, the theme will be installed by default in versions >= 0.7.0 and only works with NR stacks >= v3.0.0-beta.3
-NOTE: In the first release of theme support for FlowForge, there will be no means of selecting a theme (the forge-light theme will be set by default)
+To enable this theme, set the `editorTheme.theme` property in your `settings.js` file
+to the name of the theme you want to use:
 
-
-## License
-Apache License
-Version 2.0, January 2004
-http://www.apache.org/licenses/
+```
+module.exports = {
+    ...
+    editorTheme: {
+        theme: "forge-light" // or "forge-dark"
+    }
+    ...
+}
+```
 
 ## Development
 
-To modify colors..
-* Get the latest `colors.scss` file from node-red src
-  * found in `/packages/node_modules/@node-red/editor-client/src/sass/`
-  * Save it somewhere in this project
-* Update the colors as required & save
-* build the css using the `build.js` script e.g...
-  * `node build.js --in=colors.scss --out=compiled.css --src=/src/node-red`
+To modify the theme, edit the appropriate theme `scss` file:
 
-### Build
-
-To build the package, run...
+ - `forge-light/forge-light-theme.scss`
+ - `forge-dark/forge-dark-theme.scss`
+ 
+Then run the build to regenerate the theme css. This requires the Node-RED source
+repository checked out somewhere local:
 
     npm run build --src=/home/nol/github/node-red
 
-This will compile the `forge-light` and `forge-dark`
+This will compile the `forge-light` and `forge-dark` theme files.
 
 *NOTE: `/home/nol/github/node-red` is an example. Update this to your local src directory*

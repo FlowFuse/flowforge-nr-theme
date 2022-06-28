@@ -1,6 +1,6 @@
 {
     "name": "@flowforge/nr-theme",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "FlowForge themes for Node-RED",
     "repository": {
         "type": "git",
@@ -27,7 +27,7 @@
     "author": {
         "name": "FlowForge Inc."
     },
-    "license": "SEE LICENSE IN ./LICENSE",
+    "license": "Apache-2.0",
     "bugs": {
         "url": "https://github.com/flowforge/flowforge-nr-theme/issues"
     },
