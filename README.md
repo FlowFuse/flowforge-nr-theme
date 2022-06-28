@@ -54,6 +54,6 @@ repository checked out somewhere local:
 
     npm run build --src=/home/nol/github/node-red
 
-This will compile the `forge-light` and `forge-dark`
+This will compile the `forge-light` and `forge-dark` theme files.
 
 *NOTE: `/home/nol/github/node-red` is an example. Update this to your local src directory*
