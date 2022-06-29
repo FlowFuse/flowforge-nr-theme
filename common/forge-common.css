@@ -75,20 +75,6 @@
     top: 2px;
 }
 
-/** emulate FF menu separators */
-.red-ui-menu-dropdown .red-ui-menu-divider,
-#red-ui-header ul.red-ui-menu-dropdown li.red-ui-menu-divider {
-    background-color: unset;
-    border-top: 2px solid #BC3838;
-}
-.red-ui-menu-dropdown .red-ui-menu-divider {
-    height: 0px;
-    margin: 4px 0px;
-}
-#red-ui-header ul.red-ui-menu-dropdown li a span.red-ui-menu-sublabel {
-    display: block;
-}
-
 /* jquery ui elements color fix */
 .ui-widget-content,
 .ui-state-default a, .ui-state-default a:link,
@@ -132,27 +118,4 @@ a:visited.ui-button, .ui-button {
 /* hide debug scrollbar until required */
 .red-ui-debug-content {
     overflow:auto;
-}
-
-/* Increase size of quick add pop up to show more "recently used" */
-.red-ui-type-search .red-ui-search-results-container {
-    height: 195px;
-}
-
-/* config nodes in sidebar - solid to cover text overflow */
-.red-ui-palette-node-config.red-ui-palette-node  {
-    background-color: #e7e8ef;
-    cursor: default !important;
-}
-.red-ui-palette-node-config.red-ui-palette-node:not(.red-ui-palette-node-config-unused) .red-ui-palette-icon-container-right    {
-    background-color: #d1d2da !important;
-    cursor: pointer !important;
-}
-.red-ui-palette-node-config.red-ui-palette-node:not(.red-ui-palette-node-config-unused)  .red-ui-palette-icon-container-right  :hover {
-    background-color: #c7c8cf !important;
-    cursor: pointer !important;
-}
-.red-ui-palette-node-config.red-ui-palette-node.red-ui-palette-node-config-unused {
-    background-color: #77787f !important;
-    cursor: default !important;
 }
