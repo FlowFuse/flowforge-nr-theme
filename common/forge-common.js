@@ -62,7 +62,6 @@
             if (!RED) { return }
             const img = $('#red-ui-header > span > img')
             const ownerHref = img.parent().prop('href')
-            console.log('updating header-button-user')
             if (ownerHref) {
                 // add link to this project settings on flowforge
                 RED.menu.addItem('red-ui-header-button-user', {
