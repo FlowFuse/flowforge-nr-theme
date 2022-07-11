@@ -34,11 +34,12 @@
         // monitor #red-ui-header-button-sidemenu & add FlowForge links to the main menu
         monitorInsertion('#red-ui-header-button-sidemenu').summary(function (_arrayOfInsertedNodes) {
             if (!RED) { return }
+
+            // add Manage flowforge link
             const img = $('#red-ui-header > span > img')
-            const ownerHref = img.parent().prop('href')
-            if (ownerHref) {
+            const ownerHref = img.parent().prop('href') || 'https://app.flowforge.com'
+            try {
                 const mainURL = new URL(ownerHref)
-                // add Manage flowforge link
                 RED.menu.addItem('red-ui-header-button-sidemenu', {
                     id: 'usermenu-item-ffoverview',
                     label: 'Manage FlowForge',
@@ -46,7 +47,10 @@
                         window.location = mainURL.origin
                     }
                 })
+            } catch (error) {
+                console.log(`check ownerHref '${ownerHref}' is valid!`, error)
             }
+
             // add flowforge.com link
             RED.menu.addItem('red-ui-header-button-sidemenu', {
                 id: 'usermenu-item-ffsite',
