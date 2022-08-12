@@ -1,6 +1,5 @@
 (function () {
     /* global RED, $ */
-    console.log('hello from theme')
     // monitorInsertion: derived from https://github.com/naugtur/insertionQuery/blob/master/insQ.min.js (MIT License Copyright (c) 2014-present Zbyszek Tenerowicz <naugtur@gmail.com>)
     // eslint-disable-next-line
     document.head = (document.head || document.getElementsByTagName('head')[0]);
