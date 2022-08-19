@@ -75,14 +75,6 @@
     top: 2px;
 }
 
-/* jquery ui elements color fix */
-.ui-widget-content,
-.ui-state-default a, .ui-state-default a:link,
-.ui-state-default a:visited, a.ui-button, a:link.ui-button,
-a:visited.ui-button, .ui-button {
-    color: var(--red-ui-primary-text-color);
-}
-
 /** emulate FF menu labels */
 #red-ui-header > ul > li:NOT(.disabled) > ul > li:NOT(.disabled) > ul > li:NOT(.disabled) > a:hover,
 #red-ui-header > ul > li:NOT(.disabled) > ul > li:NOT(.disabled) > a:hover {
@@ -113,9 +105,4 @@ a:visited.ui-button, .ui-button {
 }
 ::-webkit-scrollbar-thumb:hover {
     background-color: var(--red-ui-secondary-text-color-hover);
-}
-
-/* hide debug scrollbar until required */
-.red-ui-debug-content {
-    overflow:auto;
 }
