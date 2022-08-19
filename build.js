@@ -110,7 +110,12 @@ while ((match = ruleRegex.exec(colorsFile)) !== null) {
         }
     })
 
-    const nrPkg = require(path.join(argSrc, 'package.json'))
+    let nrPkg
+    if (path.isAbsolute(argSrc)) {
+        nrPkg = require(path.join(argSrc, 'package.json'))
+    } else {
+        nrPkg = require(path.join(__dirname, argSrc, 'package.json'))
+    }
     const now = new Date().toISOString()
 
     const header = `/*
