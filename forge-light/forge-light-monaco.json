@@ -163,8 +163,7 @@
             "token": "storage.type"
         },
         {
-            "foreground": "ffffff",
-            "background": "c82829",
+            "foreground": "f12229",
             "token": "invalid"
         },
         {
@@ -173,25 +172,9 @@
             "token": "meta.separator"
         },
         {
-            "foreground": "ffffff",
+            "foreground": "f12229",
             "background": "8959a8",
             "token": "invalid.deprecated"
-        },
-        {
-            "foreground": "ffffff",
-            "token": "markup.inserted.diff"
-        },
-        {
-            "foreground": "ffffff",
-            "token": "markup.deleted.diff"
-        },
-        {
-            "foreground": "ffffff",
-            "token": "meta.diff.header.to-file"
-        },
-        {
-            "foreground": "ffffff",
-            "token": "meta.diff.header.from-file"
         },
         {
             "background": "718c00",
