@@ -1,6 +1,5 @@
 (function () {
-    /* global RED */
-
+    /* global RED, $ */
     // monitorInsertion: derived from https://github.com/naugtur/insertionQuery/blob/master/insQ.min.js (MIT License Copyright (c) 2014-present Zbyszek Tenerowicz <naugtur@gmail.com>)
     // eslint-disable-next-line
     document.head = (document.head || document.getElementsByTagName('head')[0]);
@@ -29,7 +28,8 @@
         monitorInsertion('#red-ui-header-button-sidemenu').summary(function (_arrayOfInsertedNodes) {
             if (!RED) { return }
 
-            // add main menu item "FlowForge Website"
+            RED.menu.addItem('red-ui-header-button-sidemenu', null) // menu seperator
+            // add main menu item "About FlowForge"
             RED.menu.addItem('red-ui-header-button-sidemenu', {
                 id: 'usermenu-item-ffsite',
                 label: 'About FlowForge',
@@ -37,20 +37,36 @@
                     window.location = 'https://flowforge.com/'
                 }
             })
-        })
-
-        // monitor #red-ui-header-button-user & add menu item "FlowForge Project Settings"
-        monitorInsertion('#red-ui-header-button-user').summary(function (_arrayOfInsertedNodes) {
-            if (!RED) { return }
-            const img = $('#red-ui-header > span > a > img')
-            const ownerHref = img.parent().prop('href')
-            // Test the URL is FlowForge Project alike
-            if (ownerHref && /http[s]*:\/\/.*\/project\/\w+-\w+-\w+-\w+-\w+.*/.test(ownerHref)) {
-                RED.menu.addItem('red-ui-header-button-user', {
+            // gather info from settings and page - prep for next 2 menu items
+            const ffThemeSettings = RED.settings['forge-light'] || RED.settings['forge-dark']
+            let projectURL = ''
+            if (ffThemeSettings && ffThemeSettings.projectURL) {
+                projectURL = ffThemeSettings.projectURL
+            } else {
+                const img = $('#red-ui-header > span > a > img')
+                const ownerHref = img.parent().prop('href')
+                // Test the URL is FlowForge Project alike
+                if (ownerHref && /http[s]*:\/\/.*\/project\/\w+-\w+-\w+-\w+-\w+.*/.test(ownerHref)) {
+                    projectURL = ownerHref
+                }
+            }
+            // if projectURL is present, show link to project in main menu
+            if (projectURL) {
+                RED.menu.addItem('red-ui-header-button-sidemenu', {
                     id: 'usermenu-item-ffmain',
-                    label: 'Project Settings',
+                    label: 'FlowForge Application',
                     onselect: function () {
-                        window.location = ownerHref
+                        window.location = projectURL
+                    }
+                })
+            }
+            // if theme settings are present, add launcher version entry in main menu
+            if (ffThemeSettings && ffThemeSettings.launcherVersion) {
+                RED.menu.addItem('red-ui-header-button-sidemenu', {
+                    id: 'usermenu-item-fflv',
+                    label: 'FlowForge Launcher v' + ffThemeSettings.launcherVersion,
+                    onselect: function () {
+                        // do nothing
                     }
                 })
             }

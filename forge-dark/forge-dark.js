@@ -10,6 +10,29 @@ module.exports = function (RED) {
             'forge-dark/forge-dark-theme.css'
             // /* optional */ 'forge-light/forge-light-custom.css'
         ],
+        settings: {
+            theme: {
+                value: 'forge-dark',
+                exportable: true
+            },
+            headerImage: {
+                value: 'resources/@flowforge/nr-theme/ff-nr.png',
+                exportable: true
+            },
+            favicon: {
+                value: 'resources/@flowforge/nr-theme/favicon-16x16.png',
+                exportable: true
+            },
+            launcherVersion: {
+                exportable: true
+            },
+            forgeURL: {
+                exportable: true
+            },
+            projectURL: {
+                exportable: true
+            }
+        },
         monacoOptions: {
             theme: require('./forge-dark-monaco.json'),
             fontSize: 14,
