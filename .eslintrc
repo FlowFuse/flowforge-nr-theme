@@ -3,7 +3,8 @@
         "browser": true,
         "commonjs": true,
         "es2021": true,
-        "jquery": true
+        "jquery": true,
+        "mocha": true
     },
     "extends": [
         "standard"
@@ -12,6 +13,7 @@
         "ecmaVersion": 12
     },
     "rules": {
-        "indent": ["error", 4]
+        "indent": ["error", 4],
+        "object-shorthand": ["error"]
     }
 }
