@@ -22,7 +22,9 @@
     "scripts": {
         "build": "cross-env npm run build:light && npm run build:dark",
         "build:light": "cross-env node build.js --in forge-light/forge-light-theme.scss --out forge-light/forge-light-theme.css ",
-        "build:dark": "cross-env node build.js  --in forge-dark/forge-dark-theme.scss --out forge-dark/forge-dark-theme.css "
+        "build:dark": "cross-env node build.js  --in forge-dark/forge-dark-theme.scss --out forge-dark/forge-dark-theme.css ",
+        "lint": "eslint -c .eslintrc *.js common/*.js forge-light/*.js forge-dark/*.js",
+        "lint:fix": "eslint -c .eslintrc *.js common/*.js forge-light/*.js forge-dark/*.js --fix"
     },
     "author": {
         "name": "FlowForge Inc."
@@ -34,8 +36,8 @@
     "homepage": "https://github.com/flowforge/flowforge-nr-theme#readme",
     "devDependencies": {
         "cross-env": "^7.0.3",
-        "eslint": "^7.11.0",
-        "eslint-config-standard": "^16.0.1",
+        "eslint": "^8.25.0",
+        "eslint-config-standard": "^17.0.0",
         "fs-extra": "^10.1.0",
         "nopt": "^5.0.0",
         "sass": "1.51.0"
