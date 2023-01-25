@@ -1,3 +1,10 @@
+**⚠️ This repository has been merged into https://github.com/flowforge/flowforge-nr-launcher**
+
+**⚠️ See https://github.com/flowforge/flowforge-nr-launcher/issues/99 for details**
+
+
+---
+
 # FlowForge Node-RED Theme
 
 A set of custom Node-RED themes used when running inside the FlowForge platform.
